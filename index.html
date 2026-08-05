@@ -31,9 +31,10 @@
   "areaServed": "München, Bayerisches Oberland",
   "priceRange": "€€",
   "makesOffer": [
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Interviewcoaching Einzelsession (45 Min)" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "4er-Paket Interviewvorbereitung" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fragerunde Bewerbungsinterviews (50 Min)" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Interviewcoaching Einzelsession (90 Min)" }, "price": "140", "priceCurrency": "EUR" },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "4er-Paket Interviewvorbereitung" }, "price": "340", "priceCurrency": "EUR" },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Karriere-Sprechstunde (50 Min)" }, "price": "70", "priceCurrency": "EUR" },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CV From Scratch" }, "price": "150", "priceCurrency": "EUR" },
     { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CV Check / Lebenslauf-Optimierung" } }
   ]
 }
@@ -107,7 +108,8 @@
     background:var(--off); border:1px solid rgba(36,53,43,0.12); padding:34px 28px;
     display:flex; flex-direction:column; gap:12px;
   }
-  .card .price{ font-family:'Playfair Display', serif; font-size:1.6rem; margin:6px 0;}
+  .card .price{ font-family:'Playfair Display', serif; font-size:1.6rem; margin:6px 0 0;}
+  .card .pricetag{ font-size:0.82rem; letter-spacing:0.06em; opacity:0.75; margin-bottom:6px;}
   .card .tag{ font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:#8a7a3e;}
   .card ul{ list-style:none; font-size:0.86rem; margin:10px 0 18px; flex-grow:1;}
   .card ul li{ padding:6px 0; border-top:1px solid rgba(36,53,43,0.08);}
@@ -116,12 +118,13 @@
 
   .bundle{ background:var(--dark); color:var(--off);}
   .bundle .tag{ color:var(--gold);}
+  .bundle .pricetag{ opacity:0.85;}
   .bundle ul li{ border-top:1px solid rgba(250,247,242,0.15);}
   .bundle .book-link{ border-bottom:1px solid var(--gold);}
 
   /* CV SECTION */
   .cv-band{ background:var(--cream);}
-  .cv-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:1100px; margin:0 auto;}
+  .cv-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:24px; max-width:1100px; margin:0 auto;}
   .cv-card{ background:var(--off); padding:28px 24px; text-align:center;}
   .cv-card .price{ font-family:'Playfair Display', serif; font-size:2rem; margin:10px 0;}
   .cv-card p{ font-size:0.84rem;}
@@ -208,7 +211,7 @@
     <span class="eyebrow">Interview Coaching · CV Check</span>
     <h1>Gut vorbereitet überzeugst du von Anfang an.</h1>
     <div class="divider"></div>
-    <p>Ich begleite dich mit klarem Fokus und strukturierten Methoden auf dem Weg zu deinem nächsten Jobinterview — von der ersten Frage bis zum überzeugenden Abschluss.</p>
+    <p>Mit Professionalität und einem echten Gespür für Menschen begleite ich dich mit Leidenschaft auf dem Weg zu deinem nächsten Karriereschritt — von der ersten Frage bis zum überzeugenden Abschluss.</p>
     <a href="#booking" class="cta-btn">Kostenloses Erstgespräch</a>
   </div>
   <div class="hero-img">
@@ -228,12 +231,13 @@
     <div class="card">
       <span class="tag">Einzelsession</span>
       <h3>Interviewcoaching</h3>
-      <div class="price">45 Min</div>
+      <div class="price">90 Min</div>
+      <div class="pricetag">140 €</div>
       <ul>
         <li>Analyse Stelle & Unternehmen</li>
-        <li>Simulation typischer Fragen</li>
-        <li>Direktes, konkretes Feedback</li>
-        <li>Tipps zu Auftreten & Körpersprache</li>
+        <li>Simulation typischer Fragen (STAR-Methode)</li>
+        <li>Ausführliches, konkretes Feedback</li>
+        <li>Auftreten, Körpersprache & Gehaltsverhandlung</li>
       </ul>
       <a href="#booking" class="book-link">Termin wählen →</a>
     </div>
@@ -241,6 +245,7 @@
       <span class="tag">4er-Paket · wöchentlich</span>
       <h3>Bewerbungs-Vorbereitung</h3>
       <div class="price">4 × 50 Min</div>
+      <div class="pricetag">340 €</div>
       <ul>
         <li>Standortbestimmung & Positionierung</li>
         <li>Storytelling mit der STAR-Methode</li>
@@ -251,12 +256,13 @@
     </div>
     <div class="card">
       <span class="tag">Einmalig</span>
-      <h3>Fragerunde</h3>
+      <h3>Karriere-Sprechstunde</h3>
       <div class="price">50 Min</div>
+      <div class="pricetag">70 €</div>
       <ul>
-        <li>Offener Austausch zu deinen Fragen</li>
-        <li>Ablauf verschiedener Interviewformate</li>
-        <li>Gehaltsverhandlung & schwierige Fragen</li>
+        <li>Fragen zu CV, Interview & Recruiting</li>
+        <li>Bewerbungsprozess & Auswahlverfahren</li>
+        <li>Gehaltsverhandlung & schwierige Situationen</li>
         <li>Recruiting-Perspektive aus erster Hand</li>
       </ul>
       <a href="#booking" class="book-link">Termin wählen →</a>
@@ -285,6 +291,11 @@
       <div class="price">60 €</div>
       <p>Premium-Check: roter Faden der Karriere, Positionierung, ATS- & Keyword-Optimierung im Detail.</p>
     </div>
+    <div class="cv-card">
+      <span class="tag">CV From Scratch</span>
+      <div class="price">150 €</div>
+      <p>Komplett-Erstellung: dein Lebenslauf wird von Grund auf gemeinsam mit dir aufgebaut — Struktur, Inhalt, Formulierung & ATS-Optimierung.</p>
+    </div>
   </div>
 </section>
 
@@ -295,6 +306,7 @@
       <span class="eyebrow">Über mich</span>
       <h2>Vanessa Toussaint</h2>
       <p>Seit mehreren Jahren begleite ich als Recruiterin Auswahlprozesse auf beiden Seiten des Tisches — und weiß daher genau, worauf es in einem Bewerbungsgespräch wirklich ankommt.</p>
+      <p>Dabei bringe ich Professionalität mit einem echten Gespür für Menschen zusammen: Ich richte deine fachlichen Fähigkeiten, Erwartungen und Ziele aufeinander aus — und habe dabei genauso deine sozialen Kompetenzen und deine persönliche Weiterentwicklung im Blick.</p>
       <p>Mit meinem Coaching übersetze ich diese Innensicht in konkrete, umsetzbare Vorbereitung: klar, ehrlich und auf deine Situation zugeschnitten.</p>
     </div>
   </div>
