@@ -3,17 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vanessa Toussaint — Interview Coaching & CV Check</title>
+<title>Interviewcoaching & CV-Optimierung online | Vanessa Toussaint</title>
+<meta name="description" content="Individuelles Interview Coaching und professionelle CV-Optimierung für deinen Bewerbungserfolg. CV-Check, Bewerbungstraining und Vorstellungsgespräch-Vorbereitung — bundesweit per Video.">
+<meta name="keywords" content="Interview Coaching, CV Optimierung, CV Check, Lebenslauf Check, Bewerbungscoaching, Bewerbungstraining, Vorstellungsgespräch Vorbereitung, Karrierecoaching online">
+<meta name="robots" content="index, follow">
+<meta name="google-site-verification" content="PlM9m7Wb92_Oi-XyasdDjnzTxKFMdrQENFGYMHLvOss" />
+<link rel="canonical" href="https://vanessatoussaint.de/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Interviewcoaching & CV-Optimierung online | Vanessa Toussaint">
+<meta property="og:description" content="Individuelles Interview Coaching und professionelle CV-Optimierung für deinen Bewerbungserfolg.">
+<meta property="og:url" content="https://vanessatoussaint.de/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Interviewcoaching & CV-Optimierung online | Vanessa Toussaint">
+<meta name="twitter:description" content="Individuelles Interview Coaching und professionelle CV-Optimierung für deinen Bewerbungserfolg.">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Vanessa Toussaint Coaching",
+  "description": "Interview Coaching und CV-Optimierung für Bewerber:innen.",
+  "url": "https://vanessatoussaint.de/",
+  "areaServed": "Deutschland",
+  "priceRange": "€€",
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Interviewcoaching Einzelsession (90 Min)" }, "price": "90", "priceCurrency": "EUR" },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "4er-Paket Interviewvorbereitung" }, "price": "250", "priceCurrency": "EUR" },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Karriere-Sprechstunde (50 Min)" }, "price": "50", "priceCurrency": "EUR" },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CV Deluxe" }, "price": "120", "priceCurrency": "EUR" },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CV Check / Lebenslauf-Optimierung" } }
+  ]
+}
+</script>
 <style>
   :root{
-    --dark: #24352B;
+    --dark: #355E3B;
     --cream: #E7DFCF;
     --blue: #CBD8E8;
     --gold: #E8DDA6;
     --off: #FAF7F2;
-    --ink: #24352B;
+    --ink: #355E3B;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
@@ -71,28 +104,62 @@
 
   /* SERVICES */
   .services-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; max-width:1100px; margin:0 auto;}
-  .card{
+  .card{ perspective:1200px; height:460px; cursor:pointer;}
+  .card-inner{
+    position:relative; width:100%; height:100%; transition:transform 0.6s;
+    transform-style:preserve-3d;
+  }
+  .card.flipped .card-inner{ transform:rotateY(180deg);}
+  .card-front, .card-back{
+    position:absolute; inset:0; backface-visibility:hidden;
     background:var(--off); border:1px solid rgba(36,53,43,0.12); padding:34px 28px;
     display:flex; flex-direction:column; gap:12px;
   }
-  .card .price{ font-family:'Playfair Display', serif; font-size:1.6rem; margin:6px 0;}
+  .card-back{ transform:rotateY(180deg);}
+  .card-front .price{ font-family:'Playfair Display', serif; font-size:1.6rem; margin:6px 0 0;}
+  .card-front .pricetag{ font-size:0.82rem; letter-spacing:0.06em; opacity:0.75; margin-bottom:6px;}
   .card .tag{ font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:#8a7a3e;}
-  .card ul{ list-style:none; font-size:0.86rem; margin:10px 0 18px; flex-grow:1;}
-  .card ul li{ padding:6px 0; border-top:1px solid rgba(36,53,43,0.08);}
-  .card ul li:first-child{ border-top:none;}
+  .card-front ul{ list-style:none; font-size:0.86rem; margin:10px 0 18px; flex-grow:1;}
+  .card-front ul li{ padding:6px 0; border-top:1px solid rgba(36,53,43,0.08);}
+  .card-front ul li:first-child{ border-top:none;}
   .book-link{ font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; border-bottom:1px solid var(--dark); align-self:flex-start; padding-bottom:2px;}
+  .card-hint{ font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; opacity:0.5; margin-top:auto;}
 
-  .bundle{ background:var(--dark); color:var(--off);}
+  .card-back h4{ font-family:'Playfair Display', serif; font-size:1.05rem; margin-bottom:6px;}
+  .card-back ul{ list-style:none; font-size:0.85rem; flex-grow:1;}
+  .card-back ul li{ padding:8px 0 8px 20px; position:relative; border-top:1px solid rgba(36,53,43,0.08);}
+  .card-back ul li:first-child{ border-top:none;}
+  .card-back ul li:before{ content:'—'; position:absolute; left:0; color:#8a7a3e;}
+
+  .bundle .card-front, .bundle .card-back{ background:var(--dark); color:var(--off);}
   .bundle .tag{ color:var(--gold);}
-  .bundle ul li{ border-top:1px solid rgba(250,247,242,0.15);}
+  .bundle .card-front .pricetag{ opacity:0.85;}
+  .bundle .card-front ul li, .bundle .card-back ul li{ border-top:1px solid rgba(250,247,242,0.15);}
+  .bundle .card-back ul li:before{ color:var(--gold);}
   .bundle .book-link{ border-bottom:1px solid var(--gold);}
 
   /* CV SECTION */
   .cv-band{ background:var(--cream);}
-  .cv-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:1100px; margin:0 auto;}
-  .cv-card{ background:var(--off); padding:28px 24px; text-align:center;}
-  .cv-card .price{ font-family:'Playfair Display', serif; font-size:2rem; margin:10px 0;}
-  .cv-card p{ font-size:0.84rem;}
+  .cv-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:24px; max-width:1100px; margin:0 auto;}
+
+  .cv-card{ perspective:1200px; height:250px; cursor:pointer;}
+  .cv-card-inner{
+    position:relative; width:100%; height:100%; transition:transform 0.6s;
+    transform-style:preserve-3d;
+  }
+  .cv-card.flipped .cv-card-inner{ transform:rotateY(180deg);}
+  .cv-card-front, .cv-card-back{
+    position:absolute; inset:0; backface-visibility:hidden;
+    background:var(--off); padding:28px 22px; text-align:center;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    border:1px solid rgba(36,53,43,0.1);
+  }
+  .cv-card-front p{ font-size:0.84rem;}
+  .cv-card-back{ transform:rotateY(180deg); background:var(--dark); color:var(--off);}
+  .cv-card-back .price{ font-family:'Playfair Display', serif; font-size:2.4rem;}
+  .cv-card-hint{ font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; opacity:0.55; margin-top:14px;}
+  .cv-card-back .cv-card-hint{ opacity:0.7;}
+  .cv-book-link{ font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; border-bottom:1px solid var(--gold); padding-bottom:2px; margin-top:10px;}
 
   /* PROCESS */
   .process{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; max-width:1100px; margin:0 auto; text-align:center;}
@@ -150,6 +217,8 @@
     .navlinks{ display:none;}
     .navtoggle{ display:block;}
     .services-grid, .cv-grid, .process, .about-grid, .testimonials{ grid-template-columns:1fr;}
+    .card{ height:520px;}
+    .cv-card{ height:260px;}
     .about-img{ order:-1; aspect-ratio:16/9;}
   }
 </style>
@@ -176,7 +245,8 @@
     <span class="eyebrow">Interview Coaching · CV Check</span>
     <h1>Gut vorbereitet überzeugst du von Anfang an.</h1>
     <div class="divider"></div>
-    <p>Ich begleite dich mit klarem Fokus und strukturierten Methoden auf dem Weg zu deinem nächsten Jobinterview — von der ersten Frage bis zum überzeugenden Abschluss.</p>
+    <p>Mit Professionalität und einem echten Gespür für Menschen begleite ich dich mit Leidenschaft auf dem Weg zu deinem nächsten Karriereschritt, von der ersten Frage bis zum überzeugenden Abschluss.</p>
+    <p>Ich bringe deine fachlichen Fähigkeiten, Erwartungen und Ziele in Einklang und habe dabei auch deine sozialen Kompetenzen und deine persönliche Weiterentwicklung im Blick. So wird aus meiner Erfahrung eine konkrete, ehrliche Vorbereitung, die zu dir passt.</p>
     <a href="#booking" class="cta-btn">Kostenloses Erstgespräch</a>
   </div>
   <div class="hero-img">
@@ -194,40 +264,82 @@
   </div>
   <div class="services-grid">
     <div class="card">
-      <span class="tag">Einzelsession</span>
-      <h3>Interviewcoaching</h3>
-      <div class="price">45 Min</div>
-      <ul>
-        <li>Analyse Stelle & Unternehmen</li>
-        <li>Simulation typischer Fragen</li>
-        <li>Direktes, konkretes Feedback</li>
-        <li>Tipps zu Auftreten & Körpersprache</li>
-      </ul>
-      <a href="#booking" class="book-link">Termin wählen →</a>
+      <div class="card-inner">
+        <div class="card-front">
+          <span class="tag">Einzelsession</span>
+          <h3>Interviewcoaching</h3>
+          <div class="price">90 Min</div>
+          <div class="pricetag">90 €</div>
+          <ul>
+            <li>Analyse Stelle & Unternehmen</li>
+            <li>Simulation typischer Fragen (STAR-Methode)</li>
+            <li>Ausführliches, konkretes Feedback</li>
+            <li>Auftreten, Körpersprache & Gehaltsverhandlung</li>
+          </ul>
+          <span class="card-hint">Für wen? Tippen</span>
+        </div>
+        <div class="card-back">
+          <h4>Das Richtige für dich, wenn du...</h4>
+          <ul>
+            <li>in Kürze ein konkretes Bewerbungsgespräch hast und dich gezielt darauf vorbereiten willst</li>
+            <li>schon Erfahrung hast, aber nochmal ehrliches Feedback von einer Recruiterin brauchst</li>
+            <li>dich auf ein bestimmtes Unternehmen oder eine bestimmte Rolle einstellen willst</li>
+          </ul>
+          <a href="https://buy.stripe.com/8x2aEY4zBcwjcdveEA3ZK05" class="book-link">Termin wählen →</a>
+        </div>
+      </div>
     </div>
     <div class="card bundle">
-      <span class="tag">4er-Paket · wöchentlich</span>
-      <h3>Bewerbungs-Vorbereitung</h3>
-      <div class="price">4 × 50 Min</div>
-      <ul>
-        <li>Standortbestimmung & Positionierung</li>
-        <li>Storytelling mit der STAR-Methode</li>
-        <li>Vollständige Mock-Interviews</li>
-        <li>Mentale Vorbereitung & Feinschliff</li>
-      </ul>
-      <a href="#booking" class="book-link">Paket buchen →</a>
+      <div class="card-inner">
+        <div class="card-front">
+          <span class="tag">4er-Paket · wöchentlich</span>
+          <h3>Bewerbungs-Vorbereitung</h3>
+          <div class="price">4 × 50 Min</div>
+          <div class="pricetag">250 €</div>
+          <ul>
+            <li>Bestandsaufnahme & Positionierung</li>
+            <li>Storytelling mit der STAR-Methode</li>
+            <li>Vollständige Mock-Interviews</li>
+            <li>Mentale Vorbereitung & Feinschliff</li>
+          </ul>
+          <span class="card-hint">Für wen? Tippen</span>
+        </div>
+        <div class="card-back">
+          <h4>Das Richtige für dich, wenn du...</h4>
+          <ul>
+            <li>wenig Interview-Erfahrung hast und Schritt für Schritt Sicherheit aufbauen willst</li>
+            <li>gerade erst in den Jobwechsel startest und dich strukturiert über mehrere Wochen vorbereiten willst</li>
+            <li>in einem mehrstufigen Auswahlverfahren steckst (mehrere Interviewrunden)</li>
+          </ul>
+          <a href="https://buy.stripe.com/5kQeVegijgMz6TbeEA3ZK01" class="book-link">Paket buchen →</a>
+        </div>
+      </div>
     </div>
     <div class="card">
-      <span class="tag">Einmalig</span>
-      <h3>Fragerunde</h3>
-      <div class="price">50 Min</div>
-      <ul>
-        <li>Offener Austausch zu deinen Fragen</li>
-        <li>Ablauf verschiedener Interviewformate</li>
-        <li>Gehaltsverhandlung & schwierige Fragen</li>
-        <li>Recruiting-Perspektive aus erster Hand</li>
-      </ul>
-      <a href="#booking" class="book-link">Termin wählen →</a>
+      <div class="card-inner">
+        <div class="card-front">
+          <span class="tag">Einmalig</span>
+          <h3>Karriere-Sprechstunde</h3>
+          <div class="price">50 Min</div>
+          <div class="pricetag">50 €</div>
+          <ul>
+            <li>Fragen zu CV, Interview & Recruiting</li>
+            <li>Bewerbungsprozess & Auswahlverfahren</li>
+            <li>Gehaltsverhandlung & schwierige Situationen</li>
+            <li>Recruiting-Perspektive aus erster Hand</li>
+          </ul>
+          <span class="card-hint">Für wen? Tippen</span>
+        </div>
+        <div class="card-back">
+          <h4>Das Richtige für dich, wenn du...</h4>
+          <ul>
+            <li>allgemeine Fragen hast, weil bald dein erstes Bewerbungsgespräch ansteht</li>
+            <li>in den letzten Zügen eines Bewerbungsprozesses bist und noch verhandeln musst</li>
+            <li>einfach mal die Perspektive einer Recruiterin hören willst, ohne konkreten Coaching-Bedarf</li>
+          </ul>
+          <a href="https://buy.stripe.com/9B66oI1np1RF2CV2VS3ZK03" class="book-link">Termin wählen →</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -239,19 +351,59 @@
   </div>
   <div class="cv-grid">
     <div class="cv-card">
-      <span class="tag">Studierende</span>
-      <div class="price">10 €</div>
-      <p>Basis-Check: Rechtschreibung, Formatierung, Vollständigkeit — kompaktes schriftliches Feedback.</p>
+      <div class="cv-card-inner">
+        <div class="cv-card-front">
+          <span class="tag">AZUBIS & STUDIERENDE</span>
+          <p>Basis-Check: Rechtschreibung, Formatierung, Vollständigkeit — kompaktes schriftliches Feedback.</p>
+          <span class="cv-card-hint">Zum Preis tippen</span>
+        </div>
+        <div class="cv-card-back">
+          <div class="price">15 €</div>
+          <a href="https://buy.stripe.com/9B6fZi7LNgMz3GZdAw3ZK02" class="cv-book-link">Jetzt buchen →</a>
+        </div>
+      </div>
     </div>
     <div class="cv-card">
-      <span class="tag">Bis 3 Jahre / bis 4 Jobs</span>
-      <div class="price">30 €</div>
-      <p>Profi-Check: Struktur, ATS-Tauglichkeit, wirkungsvolle Formulierungen — kommentiertes Dokument.</p>
+      <div class="cv-card-inner">
+        <div class="cv-card-front">
+          <span class="tag">JUNIOR</span>
+          <p>Bis 3 Jahre Berufserfahrung. Profi-Check: Struktur, ATS-Tauglichkeit, wirkungsvolle Formulierungen.</p>
+          <span class="cv-card-hint">Zum Preis tippen</span>
+        </div>
+        <div class="cv-card-back">
+          <div class="price">40 €</div>
+          <p style="font-size:0.72rem; opacity:0.8; margin:4px 0;">inkl. 15 Min Gespräch</p>
+          <a href="https://buy.stripe.com/bJeeVeaXZbsfgtL2VS3ZK00" class="cv-book-link">Jetzt buchen →</a>
+        </div>
+      </div>
     </div>
     <div class="cv-card">
-      <span class="tag">Ab 3 Jahre / mehr als 4 Jobs</span>
-      <div class="price">60 €</div>
-      <p>Premium-Check: roter Faden der Karriere, Positionierung, ATS- & Keyword-Optimierung im Detail.</p>
+      <div class="cv-card-inner">
+        <div class="cv-card-front">
+          <span class="tag">SENIOR</span>
+          <p>Ab 4 Jahre Berufserfahrung. Premium-Check: roter Faden der Karriere, Positionierung, ATS-Optimierung.</p>
+          <span class="cv-card-hint">Zum Preis tippen</span>
+        </div>
+        <div class="cv-card-back">
+          <div class="price">70 €</div>
+          <p style="font-size:0.72rem; opacity:0.8; margin:4px 0;">inkl. 30 Min Vorgespräch</p>
+          <a href="https://buy.stripe.com/bJedRac23gMz91jaok3ZK04" class="cv-book-link">Jetzt buchen →</a>
+        </div>
+      </div>
+    </div>
+    <div class="cv-card">
+      <div class="cv-card-inner">
+        <div class="cv-card-front">
+          <span class="tag">CV DELUXE</span>
+          <p>Komplett-Erstellung: dein Lebenslauf wird von Grund auf gemeinsam mit dir aufgebaut.</p>
+          <span class="cv-card-hint">Zum Preis tippen</span>
+        </div>
+        <div class="cv-card-back">
+          <div class="price">120 €</div>
+          <p style="font-size:0.72rem; opacity:0.8; margin:4px 0;">inkl. 30 Min Vorgespräch</p>
+          <a href="https://buy.stripe.com/7sY8wQ8PRaobfpHbso3ZK06" class="cv-book-link">Jetzt buchen →</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -262,8 +414,9 @@
     <div class="about-text">
       <span class="eyebrow">Über mich</span>
       <h2>Vanessa Toussaint</h2>
-      <p>Seit mehreren Jahren begleite ich als Recruiterin Auswahlprozesse auf beiden Seiten des Tisches — und weiß daher genau, worauf es in einem Bewerbungsgespräch wirklich ankommt.</p>
-      <p>Mit meinem Coaching übersetze ich diese Innensicht in konkrete, umsetzbare Vorbereitung: klar, ehrlich und auf deine Situation zugeschnitten.</p>
+      <p>Seit mehreren Jahren arbeite ich als Recruiterin und kenne Bewerbungsprozesse aus beiden Perspektiven. Das gibt mir ein klares Gespür dafür, worauf es in einem Bewerbungsgespräch wirklich ankommt.</p>
+      <p>Meinen Werdegang habe ich bei Mytheresa (Luxus-Unicorn im Online-Handel), bei Sixt (bekanntes Familienunternehmen mit hohem Anspruch an Qualität und Tempo) und aktuell in der Recruitingstrategie und Führungskräfteauswahl eines internationalen Konzerns gemacht.</p>
+      <p>Dadurch kenne ich nicht nur den Arbeitgebermarkt, sondern auch den Arbeitnehmermarkt aus eigener Erfahrung. Genau das bringe ich in mein Coaching ein: Professionalität kombiniert mit einem echten Gespür für Menschen.</p>
     </div>
   </div>
 </section>
@@ -301,7 +454,7 @@
     <div><div class="num">01</div><h3>Auswählen</h3><p>Passendes Angebot je nach Bedarf finden.</p></div>
     <div><div class="num">02</div><h3>Buchen</h3><p>Termin online reservieren & bezahlen.</p></div>
     <div><div class="num">03</div><h3>Vorbereiten</h3><p>Unterlagen vorab kurz zusenden.</p></div>
-    <div><div class="num">04</div><h3>Coaching</h3><p>Gemeinsame Session per Video oder vor Ort.</p></div>
+    <div><div class="num">04</div><h3>Coaching</h3><p>Gemeinsame Session per Video.</p></div>
   </div>
 </section>
 
@@ -312,8 +465,8 @@
   </div>
   <div class="faq">
     <details class="faq-item">
-      <summary>Findet das Coaching online oder vor Ort statt?</summary>
-      <p>Alle Coachings finden per Video statt, auf Wunsch auch vor Ort in München.</p>
+      <summary>Findet das Coaching online statt?</summary>
+      <p>Ja, alle Coachings finden ausschließlich per Video statt — dadurch bist du zeitlich und örtlich flexibel.</p>
     </details>
     <details class="faq-item">
       <summary>Wie schnell erhalte ich mein CV-Feedback?</summary>
@@ -337,11 +490,11 @@
 
 <footer>
   <span class="keyicon"></span>
-  Vanessa Toussaint — Strategisches Coaching für Ihren Bewerbungserfolg<br>
-  München · Bayerisches Oberland
+  Vanessa Toussaint — Strategisches Coaching für deinen Bewerbungserfolg<br>
+  Coaching bundesweit per Video
   <div class="legal">
-    <a href="#">Impressum</a>
-    <a href="#">Datenschutz</a>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
   </div>
 </footer>
 
@@ -350,6 +503,20 @@
   const navlinks = document.getElementById('navlinks');
   navtoggle.addEventListener('click', () => navlinks.classList.toggle('open'));
   navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navlinks.classList.remove('open')));
+
+  document.querySelectorAll('.cv-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
+      card.classList.toggle('flipped');
+    });
+  });
+
+  document.querySelectorAll('.services-grid .card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
+      card.classList.toggle('flipped');
+    });
+  });
 </script>
 
 </body>
